@@ -1,0 +1,31 @@
+#include<stdio.h>
+int calculategcd(int a,int b)
+{
+
+    if(b==0)
+    {
+        return a;
+    }
+    else
+    {
+        return calculategcd(b , a % b);
+    }
+}
+int calculatelcm(int a,int b)
+{
+
+    return ( a * b)/calculategcd(a,b);
+}
+int main()
+{
+    int num1,num2;
+    printf("Enter the first and second number : ");
+    scanf("%d %d",&num1,&num2);
+
+    int lcm = calculatelcm(num1,num2);
+
+    printf("LCM of %d and %d is  : %d\n",num1,num2,lcm);
+
+    return 0;
+
+}
